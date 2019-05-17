@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<title>upload page</title>
+<div>
+<h1 align="center">Select file to upload</h1>
+
+<center>
+    <p>
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        
+            {% for message in messages %}
+            <h4>{{ message }}</h4>
+            {% endfor %}
+        
+        {% endif %} {% endwith %}
+    </p>
+</center>
+
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+        <p>
+            <input type="file" name="file" multiple="true" autocomplete="off" required>
+        </p>
+    </dl>
+    <p>
+        <input type="submit" alt="Submit">
+    </p>
+
+<a href="/files">files</a>
+
+    </form>
+</div>
+</html>

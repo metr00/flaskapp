@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<title>files</title>
+<div>
+    <form>
+    	<h3> current files </h3>
+        <ul>
+            {% for file in files %}
+            <li><a href="{{ file }}">{{ file }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="/">back</a>
+    </form>
+</div>
+
+</html>
